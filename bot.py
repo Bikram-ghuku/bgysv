@@ -25,7 +25,7 @@ botid = "NzQ1MTIyMjc0Nzk3MTU4NDU1.XztLMg.-_dVaROw5zBEmlIHyyQja2PPsvY"
 client = commands.Bot(command_prefix="b!",description="A bot that creates and updates yotube stats and shows them in your server")
 
 
-conn = sqlite3.connect('.db/data.sqlite')
+conn = sqlite3.connect('./db/data.sqlite')
 cursor = conn.cursor()
 
 
