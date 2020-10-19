@@ -73,7 +73,7 @@ class YoutubeStats(commands.Cog):
 
 
 
-    @commands.command(pass_context=True,help=None)
+    @commands.command(pass_context=True,hidden=True)
     async def update(self,ctx):
         if ctx.author.id == 531138466990260225:
             succ_msg = discord.Embed(title="Server Update ",description="The following is the result of data")
