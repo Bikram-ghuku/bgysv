@@ -35,18 +35,17 @@ class Moderation(commands.Cog):
         message = ctx.message
         server = ctx.message.guild
         await message.delete()
-        if message.author.server_permissions.ban_members:
-            try:
-                print(member)
-                kick_message_target = discord.Embed(title="Ban message",description=f"you have been banned in {str(server)} as {reason}",color=discord.Color.blue())
-                kick_message = discord.Embed(title="Successfuly banned" ,description=f"The following user has been Banned: {member} ✅",color=discord.Color.blue())
-                kick_message_target.set_footer(text="Developed By Bikram Ghuku")
-                kick_message.set_footer(text="Developed By Bikram Ghuku")
-                await member.send(embed=kick_message_target)
-                await ctx.message.channel.send(embed=kick_message)
-                await member.ban(reason=reason)
-            except Exception:
-                await member.ban(reason=reason)
+        try:
+            print(member)
+            kick_message_target = discord.Embed(title="Ban message",description=f"you have been banned in {str(server)} as {reason}",color=discord.Color.blue())
+            kick_message = discord.Embed(title="Successfuly banned" ,description=f"The following user has been Banned: {member} ✅",color=discord.Color.blue())
+            kick_message_target.set_footer(text="Developed By Bikram Ghuku")
+            kick_message.set_footer(text="Developed By Bikram Ghuku")
+            await member.send(embed=kick_message_target)
+            await ctx.message.channel.send(embed=kick_message)
+            await member.ban(reason=reason)
+        except Exception:
+            await member.ban(reason=reason)
 
     @commands.command(pass_context=True,help="Mutes a member and stops him from typing anything else")
     @commands.has_guild_permissions(manage_roles=True)
