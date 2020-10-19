@@ -12,7 +12,6 @@ import sqlite3
 
 
 
-
 x=0
 banword = ["sex","fuck","banchod","madarchod","chutiya","Bitch"]
 O_T = {}
