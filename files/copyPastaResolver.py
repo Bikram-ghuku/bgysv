@@ -5,7 +5,8 @@ import asyncio
 
 userMap = {}
 DIFF = 5
-MSGS = 5
+NOMSG = 5
+MSGS = NOMSG/DIFF
 
 class copyPastaResolver(commands.Cog):
     def __init__(self,bot):
