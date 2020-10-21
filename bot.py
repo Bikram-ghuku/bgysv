@@ -13,7 +13,7 @@ import sqlite3
 
 
 x=0
-banword = ["sex","fuck","banchod","madarchod","chutiya","Bitch"]
+
 O_T = {}
 var = {}
 chaa = {}
@@ -41,20 +41,9 @@ async def ping(ctx):
     print(f'Ping {int(ping)}ms')
 
 
-@client.event
-async def on_message(message):
-    await check_banwords(message)
-    await client.process_commands(message)
 
 
-async def check_banwords(lol):
-    chan = lol.channel
-    for x in banword:
-        if x in lol.content:
-            await lol.delete()
-            x = await chan.send(f"{lol.author.mention} you are not allowed to say that word")
-            await asyncio.sleep(2)
-            await x.delete()
+
 
 
 
@@ -84,4 +73,6 @@ if __name__ == "__main__":
     client.load_extension('files.Moderation')
     client.load_extension('files.CommandEvents')
     client.load_extension('files.YoutubeStats')
+    client.load_extension('files.autoMod')
+    client.load_extension('files.copyPastaResolver')
     client.run(botid)

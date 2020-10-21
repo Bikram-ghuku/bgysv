@@ -6,6 +6,10 @@ from discord.utils import get
 conn = sqlite3.connect('./db/data.sqlite')
 cursor = conn.cursor()
 
+
+async def clear_command(channel,number:int=100):
+    await channel.purge(limit=number)
+
 class Moderation(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
@@ -119,6 +123,17 @@ class Moderation(commands.Cog):
             embene2 = discord.Embed(title="Error",description=f"❌ Couldn't strike {str(member)} error: {e}",color=discord.Color.red())
             embene2.set_footer(text="Developed By Bikram Ghuku")
             await ctx.send(embed=embene2)
+
+    @commands.command(pass_context=True,help="Deletes messages sent by a user in a fixed amount of time")
+    @commands.has_permissions(manage_messages=True)
+    async def purge(self,ctx,number:int=100):
+        with ctx.channel.typing():
+            await clear_command(ctx.channel,number)
+            await ctx.send(f"Successfuly deleted {number} of messages.")
+
+
+    
+        
 
 
 
