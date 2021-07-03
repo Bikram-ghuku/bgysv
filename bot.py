@@ -20,7 +20,7 @@ chaa = {}
 
 
 datay = ""
-botid = "NzQ1MTIyMjc0Nzk3MTU4NDU1.XztLMg.-_dVaROw5zBEmlIHyyQja2PPsvY"
+botid = ""
 client = commands.Bot(command_prefix="b!",description="A bot that creates and updates yotube stats and shows them in your server")
 
 
