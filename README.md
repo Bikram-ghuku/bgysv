@@ -1,4 +1,5 @@
 # BGYSV
+![Github License](https://img.shields.io/github/license/Bikram-ghuku/bgysv?style=social)
 Open Source discord bot for moderation, yt-stats
 
 <h4>Commads: </h4>
