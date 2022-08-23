@@ -8,7 +8,7 @@ import time
 import random
 import asyncio
 import datetime
-import sqlite3
+import sqlite3, os
 
 
 
@@ -20,7 +20,7 @@ chaa = {}
 
 
 datay = ""
-botid = ""
+botid = os.environ['BOTID']
 client = commands.Bot(command_prefix="b!",description="A bot that creates and updates yotube stats and shows them in your server")
 
 
