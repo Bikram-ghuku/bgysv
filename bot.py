@@ -74,5 +74,4 @@ if __name__ == "__main__":
     client.load_extension('files.CommandEvents')
     client.load_extension('files.YoutubeStats')
     client.load_extension('files.autoMod')
-    client.load_extension('files.copyPastaResolver')
     client.run(botid)
