@@ -64,6 +64,7 @@ async def on_ready():
     user_id TEXT,
     count TEXT
     )''')
+    cursor.commit()
     print("Bot online")
     await client.change_presence(activity=discord.Game(name="b!help."))
 
